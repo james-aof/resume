@@ -1,20 +1,56 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  TextInput,
+} from "react-native";
+import myImage from "./JW.png";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <ScrollView contentContainerStyle={styles.color}>
+      <View style={styles.container}>
+        <Image source={myImage} style={{ height: 150, width: 150 }} />
+        <Text>Hello! This is James.</Text>
+        <Intro name="CS" />
+        <Intro name="reading CS" />
+        <Intro name="doing CS" />
+        <Intro name="solving CS" />
+        <Intro name="breathing CS" />
+        <Intro name="smashing CS" />
+      </View>
       <StatusBar style="auto" />
-    </View>
+    </ScrollView>
   );
 }
 
+const Intro = (props) => {
+  return (
+    <View style={styles.center}>
+      <Text style={{ fontSize: 20 }}>
+        James is very interested in {props.name}!
+      </Text>
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
-  container: {
+  color: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#ffa",
+    justifyContent: "center",
+  },
+  container: {
+    backgroundColor: "#faf",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  center: {
+    alignItems: "center",
+    textShadowColor: "yellow",
   },
 });
